@@ -45,19 +45,22 @@ flowchart LR
 
 ## Quick Start
 
-### Backend (FastAPI + Bank Core + Graphify + Daytona)
+### Quick Start (Full Stack: Backend + War Room UI)
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -e ".[dev]"
-# Optional sponsor SDKs:
-pip install -e ".[sponsors]"
+# 1. Backend
+uv venv --python 3.11 .venv
+uv pip install --python .venv/bin/python -e ".[dev,sponsors]"
 
-cp .env.example .env
-# Add DAYTONA_API_KEY to enable live Daytona Cloud dual-sandboxes (falls back to isolated local sandboxes automatically)
+# 2. Optional: connect live Daytona Cloud key from clipboard (stored securely in 1Password + .env)
+./scripts/connect_daytona.sh
 
-uvicorn backend.api.app:app --reload --port 8000
+# 3. Frontend War Room UI
+cd frontend && npm install && cd ..
+
+# 4. Run Backend (:8000) + War Room UI (:3000) together
+./scripts/start_dev.sh
 ```
+Open War Room UI at **`http://localhost:3000`** and Swagger API docs at **`http://localhost:8000/docs`**.
 
 ### Run Tests
 ```bash

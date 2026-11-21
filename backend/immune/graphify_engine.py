@@ -15,6 +15,7 @@ import json
 from pathlib import Path
 import shutil
 import subprocess
+import sys
 from typing import Any
 
 
@@ -39,7 +40,8 @@ class GraphifyEngine:
         self._graph: dict[str, Any] | None = None
 
     def graphify_cli_available(self) -> bool:
-        return shutil.which("graphify") is not None
+        venv_bin = Path(sys.executable).parent / "graphify"
+        return venv_bin.exists() or shutil.which("graphify") is not None
 
     def try_run_graphify_cli(self) -> bool:
         """Runs local `graphify` CLI if installed to refresh native graphify-out/graph.json."""
