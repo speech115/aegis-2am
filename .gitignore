@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# Node / Frontend
+node_modules/
+frontend/.next/
+frontend/out/
+frontend/.vercel/
+
+# Secrets & local state
+.env
+.env.local
+*.log
+.DS_Store
+
+# Generated temp artifacts (keep graphify-out/graph.json tracked for demo visibility if small, ignore caches)
+graphify-out/.cache/
