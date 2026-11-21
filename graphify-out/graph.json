@@ -1,0 +1,408 @@
+{
+  "engine": "graphify-ast-v1",
+  "cli_detected": false,
+  "root_dir": "backend/bank",
+  "stats": {
+    "node_count": 23,
+    "edge_count": 35,
+    "extracted_edges": 35
+  },
+  "nodes": [
+    {
+      "id": "module:auth",
+      "label": "auth.py",
+      "kind": "module",
+      "layer": "auth",
+      "file": "backend/bank/auth.py",
+      "line": 1
+    },
+    {
+      "id": "class:auth.SessionContext",
+      "label": "SessionContext",
+      "kind": "class",
+      "layer": "auth",
+      "file": "backend/bank/auth.py",
+      "line": 15
+    },
+    {
+      "id": "fn:auth.authenticate_session",
+      "label": "authenticate_session",
+      "kind": "function",
+      "layer": "auth",
+      "file": "backend/bank/auth.py",
+      "line": 45
+    },
+    {
+      "id": "module:kyc",
+      "label": "kyc.py",
+      "kind": "module",
+      "layer": "kyc",
+      "file": "backend/bank/kyc.py",
+      "line": 1
+    },
+    {
+      "id": "class:kyc.KYCTokenRecord",
+      "label": "KYCTokenRecord",
+      "kind": "class",
+      "layer": "kyc",
+      "file": "backend/bank/kyc.py",
+      "line": 18
+    },
+    {
+      "id": "class:kyc.KYCService",
+      "label": "KYCService",
+      "kind": "class",
+      "layer": "kyc",
+      "file": "backend/bank/kyc.py",
+      "line": 29
+    },
+    {
+      "id": "fn:kyc.reset",
+      "label": "reset",
+      "kind": "function",
+      "layer": "kyc",
+      "file": "backend/bank/kyc.py",
+      "line": 36
+    },
+    {
+      "id": "fn:kyc.issue_kyc_token",
+      "label": "issue_kyc_token",
+      "kind": "function",
+      "layer": "kyc",
+      "file": "backend/bank/kyc.py",
+      "line": 62
+    },
+    {
+      "id": "fn:kyc.verify_kyc_token",
+      "label": "verify_kyc_token",
+      "kind": "function",
+      "layer": "kyc",
+      "file": "backend/bank/kyc.py",
+      "line": 83
+    },
+    {
+      "id": "module:ledger",
+      "label": "ledger.py",
+      "kind": "module",
+      "layer": "ledger",
+      "file": "backend/bank/ledger.py",
+      "line": 1
+    },
+    {
+      "id": "class:ledger.BankAccount",
+      "label": "BankAccount",
+      "kind": "class",
+      "layer": "ledger",
+      "file": "backend/bank/ledger.py",
+      "line": 13
+    },
+    {
+      "id": "class:ledger.EscrowHold",
+      "label": "EscrowHold",
+      "kind": "class",
+      "layer": "ledger",
+      "file": "backend/bank/ledger.py",
+      "line": 28
+    },
+    {
+      "id": "class:ledger.TransferRecord",
+      "label": "TransferRecord",
+      "kind": "class",
+      "layer": "ledger",
+      "file": "backend/bank/ledger.py",
+      "line": 39
+    },
+    {
+      "id": "class:ledger.BankLedger",
+      "label": "BankLedger",
+      "kind": "class",
+      "layer": "ledger",
+      "file": "backend/bank/ledger.py",
+      "line": 50
+    },
+    {
+      "id": "fn:ledger.reset",
+      "label": "reset",
+      "kind": "function",
+      "layer": "ledger",
+      "file": "backend/bank/ledger.py",
+      "line": 65
+    },
+    {
+      "id": "fn:ledger.get_account",
+      "label": "get_account",
+      "kind": "function",
+      "layer": "ledger",
+      "file": "backend/bank/ledger.py",
+      "line": 99
+    },
+    {
+      "id": "fn:ledger.debit",
+      "label": "debit",
+      "kind": "function",
+      "layer": "ledger",
+      "file": "backend/bank/ledger.py",
+      "line": 104
+    },
+    {
+      "id": "fn:ledger.create_escrow_hold",
+      "label": "create_escrow_hold",
+      "kind": "function",
+      "layer": "ledger",
+      "file": "backend/bank/ledger.py",
+      "line": 133
+    },
+    {
+      "id": "fn:ledger.record_shadow_decoy",
+      "label": "record_shadow_decoy",
+      "kind": "function",
+      "layer": "ledger",
+      "file": "backend/bank/ledger.py",
+      "line": 151
+    },
+    {
+      "id": "fn:ledger.snapshot",
+      "label": "snapshot",
+      "kind": "function",
+      "layer": "ledger",
+      "file": "backend/bank/ledger.py",
+      "line": 171
+    },
+    {
+      "id": "module:transfers",
+      "label": "transfers.py",
+      "kind": "module",
+      "layer": "transfers",
+      "file": "backend/bank/transfers.py",
+      "line": 1
+    },
+    {
+      "id": "fn:transfers.execute_transfer",
+      "label": "execute_transfer",
+      "kind": "function",
+      "layer": "transfers",
+      "file": "backend/bank/transfers.py",
+      "line": 20
+    },
+    {
+      "id": "fn:transfers.process_wire_request",
+      "label": "process_wire_request",
+      "kind": "function",
+      "layer": "transfers",
+      "file": "backend/bank/transfers.py",
+      "line": 47
+    }
+  ],
+  "edges": [
+    {
+      "source": "module:auth",
+      "target": "class:auth.SessionContext",
+      "relation": "DEFINES",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:auth",
+      "target": "fn:auth.authenticate_session",
+      "relation": "DEFINES",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:kyc",
+      "target": "class:kyc.KYCTokenRecord",
+      "relation": "DEFINES",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:kyc",
+      "target": "class:kyc.KYCService",
+      "relation": "DEFINES",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:kyc",
+      "target": "fn:kyc.reset",
+      "relation": "DEFINES",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:kyc",
+      "target": "fn:kyc.issue_kyc_token",
+      "relation": "DEFINES",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:kyc",
+      "target": "fn:kyc.verify_kyc_token",
+      "relation": "DEFINES",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:ledger",
+      "target": "class:ledger.BankAccount",
+      "relation": "DEFINES",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:ledger",
+      "target": "class:ledger.EscrowHold",
+      "relation": "DEFINES",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:ledger",
+      "target": "class:ledger.TransferRecord",
+      "relation": "DEFINES",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:ledger",
+      "target": "class:ledger.BankLedger",
+      "relation": "DEFINES",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:ledger",
+      "target": "fn:ledger.reset",
+      "relation": "DEFINES",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:ledger",
+      "target": "fn:ledger.get_account",
+      "relation": "DEFINES",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:ledger",
+      "target": "fn:ledger.debit",
+      "relation": "DEFINES",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:ledger",
+      "target": "fn:ledger.create_escrow_hold",
+      "relation": "DEFINES",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:ledger",
+      "target": "fn:ledger.record_shadow_decoy",
+      "relation": "DEFINES",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:ledger",
+      "target": "fn:ledger.snapshot",
+      "relation": "DEFINES",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:transfers",
+      "target": "fn:transfers.execute_transfer",
+      "relation": "DEFINES",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:transfers",
+      "target": "fn:transfers.process_wire_request",
+      "relation": "DEFINES",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "fn:auth.authenticate_session",
+      "target": "class:auth.SessionContext",
+      "relation": "CALLS",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "fn:kyc.reset",
+      "target": "class:kyc.KYCTokenRecord",
+      "relation": "CALLS",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "fn:kyc.issue_kyc_token",
+      "target": "class:kyc.KYCTokenRecord",
+      "relation": "CALLS",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "fn:ledger.reset",
+      "target": "class:ledger.BankAccount",
+      "relation": "CALLS",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "fn:ledger.debit",
+      "target": "fn:ledger.get_account",
+      "relation": "CALLS",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "fn:ledger.debit",
+      "target": "class:ledger.TransferRecord",
+      "relation": "CALLS",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "fn:ledger.create_escrow_hold",
+      "target": "class:ledger.EscrowHold",
+      "relation": "CALLS",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "fn:ledger.record_shadow_decoy",
+      "target": "class:ledger.TransferRecord",
+      "relation": "CALLS",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:transfers",
+      "target": "module:auth",
+      "relation": "IMPORTS",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:transfers",
+      "target": "module:kyc",
+      "relation": "IMPORTS",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "module:transfers",
+      "target": "module:ledger",
+      "relation": "IMPORTS",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "fn:transfers.execute_transfer",
+      "target": "fn:ledger.get_account",
+      "relation": "CALLS",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "fn:transfers.execute_transfer",
+      "target": "fn:ledger.debit",
+      "relation": "CALLS",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "fn:transfers.process_wire_request",
+      "target": "fn:auth.authenticate_session",
+      "relation": "CALLS",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "fn:transfers.process_wire_request",
+      "target": "fn:kyc.verify_kyc_token",
+      "relation": "CALLS",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "fn:transfers.process_wire_request",
+      "target": "fn:transfers.execute_transfer",
+      "relation": "CALLS",
+      "confidence": "EXTRACTED"
+    }
+  ]
+}
